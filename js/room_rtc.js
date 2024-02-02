@@ -52,6 +52,7 @@ let joinRoomInit = async () => {
 
     client.on('user-published', handleUserPublished)
     client.on('user-left', handleUserLeft)
+    joinStream()
 }
 
 let joinStream = async () => {
@@ -59,8 +60,8 @@ let joinStream = async () => {
     document.getElementsByClassName('stream__actions')[0].style.display = 'flex'
 
     localTracks = await AgoraRTC.createMicrophoneAndCameraTracks({}, {encoderConfig:{
-        width:{min:640, ideal:1920, max:1920},
-        height:{min:480, ideal:1080, max:1080}
+        width:{min:640, ideal:1280, max:1280},
+        height:{min:480, ideal:720, max:720}
     }})
 
 
